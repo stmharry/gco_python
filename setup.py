@@ -52,4 +52,5 @@ setup(
                             library_dirs=[gco_directory],
                             extra_compile_args=["-fpermissive"])],
     package_data = {'': ['pygco.so']},
+    install_requires=['cython'],
 )
