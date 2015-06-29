@@ -5,6 +5,8 @@ import Cython.Distutils
 from Cython.Distutils import build_ext
 import os
 import numpy
+import wget
+import zipfile
 
 gco_directory = "gco_src"
 
@@ -14,6 +16,15 @@ files = ['GCoptimization.cpp', 'graph.cpp', 'LinkedBlockList.cpp',
 files = [os.path.join(gco_directory, f) for f in files]
 files.insert(0, "gco_python.pyx")
 
+# download src files
+# wget.download("http://vision.csd.uwo.ca/code/gco-v3.0.zip")
+wget.download("http://147.228.240.61/queetech/install/gco-v3.0.zip")
+if not os.path.exists(gco_directory):
+        os.makedirs(gco_directory)
+with zipfile.ZipFile('gco-v3.0.zip') as zf:
+    zf.extractall(gco_directory)
+
+
 setup(
         
     name='pygco',
@@ -21,10 +32,10 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
-    version='0.0.3',
+    version='0.0.5',
     url='https://github.com/mjirik/gco_python',
-    author='Miroslav Jirik',
-    author_email='miroslav.jirik@gmail.com',
+    author='',
+    author_email='',
     license='MIT',
 
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -52,5 +63,5 @@ setup(
                             library_dirs=[gco_directory],
                             extra_compile_args=["-fpermissive"])],
     package_data = {'': ['pygco.so']},
-    install_requires=['cython'],
+    install_requires=['cython', 'wget'],
 )
