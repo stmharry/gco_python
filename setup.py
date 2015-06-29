@@ -16,4 +16,6 @@ setup(cmdclass={'build_ext': build_ext},
       ext_modules=[Extension("pygco", files, language="c++",
                              include_dirs=[gco_directory, numpy.get_include()],
                              library_dirs=[gco_directory],
-                             extra_compile_args=["-fpermissive"])])
+                             extra_compile_args=["-fpermissive"])],
+      package_data = {'': ['pygco.so']},
+      )
