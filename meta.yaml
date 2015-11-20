@@ -33,10 +33,12 @@ requirements:
     - python
     - setuptools
     - numpy
+    - cython
 
   run:
     - python
     - numpy
+    - cython
 
 test:
   # Python imports
