@@ -18,11 +18,14 @@ files.insert(0, "gco_python.pyx")
 
 # download src files
 # wget.download("http://vision.csd.uwo.ca/code/gco-v3.0.zip")
-wget.download("http://147.228.240.61/queetech/install/gco-v3.0.zip")
+gco_zip = "gco-v3.0.zip"
+if not os.path.exists(gco_zip):
+    wget.download("http://147.228.240.61/queetech/install/gco-v3.0.zip", out=gco_zip)
 if not os.path.exists(gco_directory):
-        os.makedirs(gco_directory)
-with zipfile.ZipFile('gco-v3.0.zip') as zf:
-    zf.extractall(gco_directory)
+    os.makedirs(gco_directory)
+if not os.path.exists(os.path.join(gco_directory, 'graph.h')):
+    with zipfile.ZipFile(gco_zip) as zf:
+        zf.extractall(gco_directory)
 
 
 setup(
