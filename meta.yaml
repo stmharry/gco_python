@@ -34,7 +34,7 @@ requirements:
     - setuptools
     - numpy
     - cython
-    - wget
+    - pywget
 
   run:
     - python
