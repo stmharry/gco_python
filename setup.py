@@ -21,7 +21,7 @@ files.insert(0, "gco_python.pyx")
 gco_zip = "gco-v3.0.zip"
 if not os.path.exists(gco_zip):
     print("Downloading gco-v3.0.zip ...")
-    wget.download("http://home.zcu.cz/~mjirik/install/gco-v3.0.zip", out=gco_zip)
+    wget.download("http://home.zcu.cz/~mjirik/install/queetech/gco-v3.0.zip", out=gco_zip)
 if not os.path.exists(gco_directory):
     os.makedirs(gco_directory)
 if not os.path.exists(os.path.join(gco_directory, 'graph.h')):
