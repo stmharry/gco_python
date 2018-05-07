@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import ( division, absolute_import, print_function, unicode_literals )
+import sys, os, tempfile, logging
+
 from distutils.core import setup
 from distutils.extension import Extension
 import Cython
 import Cython.Distutils
 from Cython.Distutils import build_ext
-import os
 import numpy
-import sys, os, tempfile, logging
 # import wget
 import zipfile
 if sys.version_info >= (3,):
