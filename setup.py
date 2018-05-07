@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from __future__ import ( division, absolute_import, print_function, unicode_literals )
-import sys, os, tempfile, logging
+# from __future__ import ( division, absolute_import, print_function, unicode_literals )
+# import sys, os, tempfile, logging
 
 from distutils.core import setup
 from distutils.extension import Extension
@@ -12,6 +12,8 @@ from Cython.Distutils import build_ext
 import numpy
 # import wget
 import zipfile
+import sys
+import os
 if sys.version_info >= (3,):
     import urllib.request as urllib2
     import urllib.parse as urlparse
@@ -68,7 +70,8 @@ def download_file(url, dest=None, filename=None):
             if file_size:
                 status += "   [{0:6.2f}%]".format(file_size_dl * 100 / file_size)
             status += chr(13)
-            print(status, end="")
+            # print(status, end="")
+            print(status)
 
 
 # download src files
@@ -117,6 +120,7 @@ setup(
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6',
     ],
     cmdclass={'build_ext': build_ext},
     ext_modules=[Extension("pygco", files, language="c++",
