@@ -1,9 +1,9 @@
 package:
   name: pygco
-  version: "0.0.15"
+  version: "0.0.16"
 
 source:
-  git_rev: 0.0.15
+  git_rev: 0.0.16
   git_url: .
 #  fn: imtools-0.0.17.tar.gz
 #  url: https://pypi.python.org/packages/source/i/imtools/imtools-0.0.17.tar.gz
