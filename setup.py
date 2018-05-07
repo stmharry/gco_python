@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from __future__ import ( division, absolute_import, print_function, unicode_literals )
 from distutils.core import setup
 from distutils.extension import Extension
 import Cython
@@ -8,7 +12,6 @@ import numpy
 import sys, os, tempfile, logging
 # import wget
 import zipfile
-from __future__ import ( division, absolute_import, print_function, unicode_literals )
 if sys.version_info >= (3,):
     import urllib.request as urllib2
     import urllib.parse as urlparse
