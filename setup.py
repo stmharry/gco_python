@@ -17,9 +17,11 @@ import os
 if sys.version_info >= (3,):
     import urllib.request as urllib2
     import urllib.parse as urlparse
+    from urllib.error import UDLError
 else:
     import urllib2
     import urlparse
+    from urllib2.error import UDLError
 
 gco_directory = "gco_src"
 
