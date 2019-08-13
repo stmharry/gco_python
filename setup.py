@@ -80,6 +80,12 @@ gco_zip = "gco-v3.0.zip"
 if not os.path.exists(gco_zip):
     print("Downloading gco-v3.0.zip ...")
     download_file("http://home.zcu.cz/~mjirik/lisa/install/gco-v3.0.zip", filename=gco_zip)
+
+# backup server
+if not os.path.exists(gco_zip):
+    print("Downloading gco-v3.0.zip ...")
+    download_file("http://mouse.cs.uwaterloo.ca/code/gco-v3.0.zip", filename=gco_zip)
+
     # wget.download("http://home.zcu.cz/~mjirik/lisa/install/gco-v3.0.zip", out=gco_zip)
 if not os.path.exists(gco_directory):
     os.makedirs(gco_directory)
