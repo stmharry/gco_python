@@ -21,7 +21,7 @@ if sys.version_info >= (3,):
 else:
     import urllib2
     import urlparse
-    from urllib2.error import URLError
+    from urllib2 import URLError
 
 gco_directory = "gco_src"
 
