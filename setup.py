@@ -17,11 +17,11 @@ import os
 if sys.version_info >= (3,):
     import urllib.request as urllib2
     import urllib.parse as urlparse
-    from urllib.error import UDLError
+    from urllib.error import URLError
 else:
     import urllib2
     import urlparse
-    from urllib2.error import UDLError
+    from urllib2.error import URLError
 
 gco_directory = "gco_src"
 
@@ -105,7 +105,7 @@ setup(
     # http://packaging.python.org/en/latest/tutorial.html#version
     version='0.0.19',
     url='https://github.com/mjirik/gco_python',
-    author='',
+    author='Andreas Mueller',
     author_email='',
     license='MIT',
 
@@ -128,6 +128,7 @@ setup(
         # that you indicate whether you support Python 2, Python 3 or both.
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
     cmdclass={'build_ext': build_ext},
     ext_modules=[Extension("pygco", files, language="c++",
